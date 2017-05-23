@@ -43,6 +43,8 @@ var mapping = {
 		'GET': 'system.systemInfo(response)'
 	},
 	'/accounts': {
-		'POST': 'account.create(input, response)'
+		'GET': 'account.read(response)',
+		'POST': 'account.create(input, response)',
+		'PUT': 'account.update(input, response)'
 	}
 };
