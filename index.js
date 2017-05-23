@@ -4,7 +4,6 @@ var http = require('http');
 var routes = require('./app/routes');
 
 http.createServer(function (req, res) {
-	res.writeHead(200, {'Content-Type': 'application/json'});
 	var headers = req.rawHeaders;
 	if(headers.indexOf('Content-Type') != -1) {
 		// console.log(headers[headers.indexOf('Content-Type') + 1]);	
@@ -22,11 +21,13 @@ http.createServer(function (req, res) {
 		});
 		req.on('end', function () {
 			resData = routes.invoke(method, url, body);
+			res.writeHead(resData.status, {'Content-Type': 'application/json'});
 			res.write(JSON.stringify(resData));
 			res.end();
 		});
 	} else {
 		resData = routes.invoke(method, url);
+		res.writeHead(resData.status, {'Content-Type': 'application/json'});
 		res.write(JSON.stringify(resData));
 		res.end();
 	}
