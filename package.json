@@ -1,0 +1,23 @@
+{
+  "name": "yaqing.services",
+  "version": "0.0.1",
+  "description": "explor more...",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bieyaqing/services.git"
+  },
+  "keywords": [
+    "services"
+  ],
+  "author": "yaqing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bieyaqing/services/issues"
+  },
+  "homepage": "https://github.com/bieyaqing/services#readme"
+}
