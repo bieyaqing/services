@@ -25,8 +25,8 @@ module.exports = {
 				eval(bar)
 			} else {
 				callback({
-					status: 404,
-					message: "Service not found!"
+					status: 405,
+					message: method + " method not allowed!"
 				});
 			}
 		} else {
