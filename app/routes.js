@@ -40,9 +40,9 @@ module.exports = {
 
 var mapping = {
 	'/system': {
-		'GET': 'system.systemInfo(response)',
-		'POST': 'system.createDatabase(response)'
-	}, '/accounts': {
+		'GET': 'system.systemInfo(response)'
+	},
+	'/accounts': {
 		'POST': 'account.create(input, response)'
 	}
 };

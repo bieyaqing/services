@@ -6,11 +6,14 @@ module.exports = {
 	create: function(acc, callback) {
 		// TODO Validate account!
 		dao.create(acc, callback);
-	}, read: function() {
+	},
+	read: function() {
 
-	}, update: function() {
+	},
+	update: function() {
 
-	}, delete: function() {
+	},
+	delete: function() {
 
 	}
 };

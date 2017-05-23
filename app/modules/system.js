@@ -13,29 +13,5 @@ module.exports = {
 				version: "0.0.1"
 			}
 		});
-	}, createDatabase: function(callback) {
-		MongoClient.connect(MDB_URL, function(err, db) {
-			if (err) {
-				callback({
-					status: 0,
-					message: err
-				});
-			} else {
-				db.createCollection("accounts", function(err, res) {
-					if (err) {
-						callback({
-							status: 0,
-							message: "accounts not created"
-						});
-					} else {
-						db.close();
-						callback({
-							status: 1,
-							data: "database created"
-						});
-					}
-				});
-			}
-		});
 	}
 };

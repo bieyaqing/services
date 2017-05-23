@@ -28,11 +28,14 @@ module.exports = {
 				});
 			}
 		});
-	}, query: function() {
+	},
+	query: function() {
 
-	}, update: function() {
+	},
+	update: function() {
 
-	}, delete: function() {
+	},
+	delete: function() {
 
 	}
 };
