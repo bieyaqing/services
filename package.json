@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/bieyaqing/services/issues"
   },
-  "homepage": "https://github.com/bieyaqing/services#readme"
+  "homepage": "https://github.com/bieyaqing/services#readme",
+  "devDependencies": {
+    "mongodb": "^2.2.27"
+  }
 }

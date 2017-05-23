@@ -20,15 +20,18 @@ http.createServer(function (req, res) {
 			}
 		});
 		req.on('end', function () {
-			resData = routes.invoke(method, url, body);
-			res.writeHead(resData.status, {'Content-Type': 'application/json'});
-			res.write(JSON.stringify(resData));
-			res.end();
+			body = JSON.parse(body);
+			routes.invoke(method, url, body, function(data) {
+				res.writeHead(data.status, {'Content-Type': 'application/json'});
+				res.write(JSON.stringify(data));
+				res.end();
+			});
 		});
 	} else {
-		resData = routes.invoke(method, url);
-		res.writeHead(resData.status, {'Content-Type': 'application/json'});
-		res.write(JSON.stringify(resData));
-		res.end();
+		resData = routes.invoke(method, url, undefined, function(data) {
+			res.writeHead(data.status, {'Content-Type': 'application/json'});
+			res.write(JSON.stringify(data));
+			res.end();
+		});
 	}
 }).listen(8080);
