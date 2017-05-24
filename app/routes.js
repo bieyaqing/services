@@ -78,6 +78,16 @@ router.delete('/accounts/:_id', function (req, res) {
 	});
 });
 
+router.post('/auth', function (req, res) {
+	var input = req.body;
+	account.auth(input, function(data) {
+		responseBody(data, function(data) {
+			res.write(JSON.stringify(data));
+		});
+		res.end();
+	});
+});
+
 function responseBody(data, callback) {
 	if(data.status == 1) {
 		callback({
