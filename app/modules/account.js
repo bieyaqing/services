@@ -69,7 +69,20 @@ module.exports = {
 	},
 	delete: function(input, callback) {
 		var query = input;
-		dao.delete(table, query, callback);
+		dao.query(table, query, function(data) {
+			if(data.status) {
+				if(data.data.length == 0) {
+					callback({
+						status: 0,
+						message: "account not exist"
+					});
+				} else {
+					dao.delete(table, query, callback);
+				}
+			} else {
+				callback(data);
+			}
+		});
 	},
 	auth: function(input, callback) {
 		var email = input.email;
