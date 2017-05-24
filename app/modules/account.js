@@ -5,7 +5,6 @@ var table = 'accounts';
 
 module.exports = {
 	create: function(acc, callback) {
-		// TODO Validate account!
 		var name = acc.name;
 		var email = acc.email;
 		if(name && email) {
@@ -32,8 +31,9 @@ module.exports = {
 			});
 		}
 	},
-	read: function(callback) {
-		dao.query(table, {}, callback);
+	read: function(input, callback) {
+		var query = input;
+		dao.query(table, query, callback);
 	},
 	update: function(acc, callback) {
 		var name = acc.name;
@@ -62,7 +62,8 @@ module.exports = {
 			});
 		}
 	},
-	delete: function() {
-
+	delete: function(input, callback) {
+		var query = input;
+		dao.delete(table, query, callback);
 	}
 };
