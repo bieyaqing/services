@@ -3,7 +3,7 @@
 var MongoDB = require('mongodb');
 var MongoClient = MongoDB.MongoClient;
 var ObjectID = MongoDB.ObjectID;
-var MDB_URL = "mongodb://localhost:27017/ser_system";
+var MDB_URL = "mongodb://10.148.0.4:27017/ser_system";
 
 module.exports = {
 	create: function(table, obj, callback) {
